@@ -1,0 +1,816 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,801;1,801&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@700&family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Condensed:wght@700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Silkscreen&display=swap');
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative; /* Required for absolute positioning */
+    background-color: rgb(127, 23, 37); ;
+}
+
+
+.image-scroll {
+    width: 100%;
+    height: 400px; /* Adjust the height as needed */
+    overflow: hidden; /* This is to ensure the image doesn't overflow */
+    position: relative;
+    background-color: red;
+}
+
+
+.slider {
+  width: 100%;
+  height: 1200px;
+  overflow: hidden;
+  position: relative;
+  margin-top: -150px;
+}
+
+#sliderimage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  opacity: 1;
+  transition: opacity 1s ease; /* Smooth fade effect */
+}
+
+.phrase {
+    position: absolute;
+    top: 65%; /* Position the phrase in the middle vertically */
+    left: -100%; /* Start the phrase off-screen to the left */
+    color: rgba(127, 23, 37, 0.8);  /* Semi-transparent white color */
+    font-size: 40px; /* Larger font size */
+    text-align: center;
+    width: 100%; /* Make the phrase span the entire width */
+    z-index: 2; /* Ensure the phrase is above the image */
+    animation: movePhrase 10s linear infinite, textDisappear 10s linear infinite; /* Move the phrase from left to right */
+  }
+
+  .phrase h1 {
+    white-space: nowrap;
+}
+
+.phrase2 {
+    position: absolute;
+    top: 77%; /* Position the phrase in the middle vertically */
+    left: -100%; /* Start the phrase off-screen to the left */
+    color: rgba(127, 23, 37, 1);  /* Semi-transparent white color */
+    font-size: 40px; /* Larger font size */
+    text-align: center;
+    width: 100%; /* Make the phrase span the entire width */
+    z-index: 2; /* Ensure the phrase is above the image */
+    animation: movePhraseLeft 10s linear infinite, textDisappear 10s linear infinite; /* Move the phrase from left to right and make it disappear */
+
+  }
+
+  .phrase2 h1 {
+    white-space: nowrap;
+}
+
+.phrase3 {
+    position: absolute;
+    top: 85%; /* Position the phrase in the middle vertically */
+    left: -100%; /* Start the phrase off-screen to the left */
+    color: rgba(127, 23, 37, 1);  /* Semi-transparent white color */
+    font-size: 40px; /* Larger font size */
+    text-align: center;
+    width: 100%; /* Make the phrase span the entire width */
+    z-index: 2; /* Ensure the phrase is above the image */
+    animation: movePhrase2 10s linear infinite, textDisappear 10s linear infinite; /* Move the phrase from left to right and make it disappear */
+
+  }
+
+  .phrase3 h1 {
+    white-space: nowrap;
+}
+
+@keyframes textDisappear {
+    0% {
+      opacity: 1;
+    }
+    50% {
+        opacity: 1;
+      }
+    100% {
+      opacity: 0;
+    }
+  }
+
+@keyframes movePhraseLeft {
+0% {
+    left: 100%; /* Start off-screen to the right */
+    transform: translateX(50%);
+}
+25% {
+    left: 30%; /* Move the phrase to the center of the page */
+    transform: translateX(0%);
+}
+50% {
+    left: 30%; /* Keep the phrase centered */
+    transform: translateX(0%);
+}
+55% {
+    left: 30%; /* Keep the phrase centered */
+    transform: translateX(0%);
+}
+100% {
+    left: 100%; /* Move the phrase off-screen to the left */
+    transform: translateX(0%);
+}
+}
+
+  
+@keyframes movePhrase2 {
+0% {
+    transform: translateX(-100%);
+}
+25% {
+    left: 22%; /* Move the phrase to the center of the page */
+    transform: translateX(-50%);
+}
+55% {
+    left: 22%; /* Keep the phrase centered */
+    transform: translateX(-50%);
+}
+55% {
+    left: 22%; /* Keep the phrase centered */
+    transform: translateX(-50%);
+}
+150% {
+    left: 100%; /* Move the phrase off-screen to the right */
+    transform: translateX(-50%);
+}
+}
+
+  
+@keyframes movePhrase {
+0% {
+    transform: translateX(-100%);
+}
+25% {
+    left: 45%; /* Move the phrase to the center of the page */
+    transform: translateX(-50%);
+}
+50% {
+    left: 45%; /* Keep the phrase centered */
+    transform: translateX(-50%);
+}
+55% {
+    left: 45%; /* Keep the phrase centered */
+    transform: translateX(-50%);
+}
+150% {
+    left: 100%; /* Move the phrase off-screen to the right */
+    transform: translateX(-50%);
+}
+}
+
+header {
+    background-color: rgba(127, 23, 37, 0.8); /* Semi-transparent black */
+    color: white;
+    padding: 20px 20px;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Required for absolute positioning */
+    z-index: 1; /* Above other content */
+    animation: slideInFromLeft 3s ease forwards; /* Apply animation on page load */
+}
+
+
+canvas {
+    position: absolute;
+    top: 87px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 50px; 
+    transform: rotate(180deg);
+    z-index: 4;
+  }
+  
+
+
+
+header img {
+    width: 100px;
+}
+
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+nav .nav-link {
+    color: white;
+}
+
+nav a {
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px; /* Larger font size */
+    padding: 120px; /* Add padding around the text */
+    transition: color 0.9s; /* Smooth color change on hover */
+    position: relative; /* Required for absolute positioning of pseudo-element */
+    animation: slideInFromLeft 5s ease forwards; /* Apply animation on page load */
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 42px;
+    
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+
+.nav-link:hover {
+    color: transparent; /* Change text color to transparent on hover */
+    background-image: none; /* Remove background image on hover */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nav-link:hover::before {
+    content: "";
+    display: inline-block;
+    background-image: url(''); /* Set background image to an empty image */
+}
+
+
+.my-header.restart-animation{
+    animation: slideIn 2s ease forwards; /* Apply animation on page load */
+}
+
+header img {
+    width: 220px;
+    margin-top: 20px;
+}
+
+.logo_image {
+    max-width: 100%; /* Set the maximum width for the logo */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+/* -----------------------------------------ABOUT SECTION-------------------------------------------- */
+#about {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+}
+
+.about_img {
+    margin-right: 400px; /* Add space between image and text */
+    margin-top: 100px;
+}
+
+.text {
+    text-align: left; /* Align text to the left */
+    margin-left: 200px;
+    margin-right: 300px;
+    margin-bottom: 100px;
+}
+
+.text h1 {
+    font-size: 200px;
+    margin-left: -200px;
+    margin-top: -50px;
+    overflow: hidden; /* Ensures the text doesn't overflow */
+    border-right: 20px solid #b97837; /* Cursor effect */
+    white-space: nowrap; /* Keeps the text on a single line */
+    margin: 0 auto; /* Centers the element */
+    font-family: monospace; /* Optional: Use a monospace font for a typewriter effect */
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.typing-animation.animated {
+    animation: typing 10s; /* Duration */
+}
+
+
+@keyframes typing {
+    0% { width: 0; border-right-color: transparent; } /* Start with 0 width and transparent border */
+    20%, 25% { width: 100%; border-right-color: #562121; } /* Expand to full width with first color */
+    25%, 50% { border-right-color: #b46e3f; } /* Change to second color */
+    50%, 75% { border-right-color: #b97837; } /* Change to third color */
+    75%, 100% { width: 100%; border-right-color: transparent; } /* Collapse back to 0 width with transparent border */
+}
+
+
+.text h2 {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 4s, transform 4s;
+    animation: fadeInUp 4s ease-in-out forwards;
+    color: rgb(255, 255, 255);
+}
+
+
+.text p{
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 22px;
+    text-align: justify;
+    word-spacing: 0.2em; /* Adjust as needed */
+    color: rgb(255, 255, 255);
+    transition: opacity 8s, transform 6s;
+    animation: fadeInUp 8s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+/* -----------------------------------------PROJECTS-------------------------------------------- */
+
+.section_project{
+    margin-top: 100px;
+    margin-bottom: 300px;
+}
+
+
+.section_project h1 {
+    color: white;
+    text-align: center;
+    font-size: 100px;
+    opacity: 0; /* Initial opacity */
+    transform: translateY(-50px); /* Initial position */
+    transition: opacity 4s, transform 4s; /* Smooth transition */
+}
+
+.section_project.animate h1 {
+    opacity: 1; /* Make the element fully opaque */
+    transform: translateY(0); /* Move the element to its final position */
+}
+
+.entry {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: linear-gradient(45deg, #8B4513 0%, #8B4513 30%, #976029 30%, #704820 70%, #8B4513 70%, #8B4513 100%);
+    margin: 1em;
+    padding: 0.5em;
+    border-radius: 10px;
+    box-shadow: 4px 4px 5px 0px rgba(200, 54, 52, 0.817);
+  }
+
+
+  .entry img {
+    width: 100%; /* Cover the entire width of the div */
+    height: 100%; /* Cover the entire height of the div */
+    object-fit: cover; /* Ensure the image covers the entire space without stretching */
+    transition: filter 0.3s ease; /* Add a smooth transition */
+  }
+  
+  /* Make all <img> tags turn black when hovered over */
+  .entry img:hover {
+    filter: grayscale(100%);
+  }
+  
+  .entry p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .entry:hover p {
+    opacity: 1;
+  }
+
+
+
+
+
+
+  .container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .items {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    animation: carouselAnim 50s infinite alternate linear;
+  }
+  
+
+  
+  @media only screen and (max-width: 768px) {
+    .items {
+      animation: carouselAnim 35s infinite alternate linear;
+    }
+    
+    @keyframes carouselAnim {
+      from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(calc(-100% + (2 * 300px)));
+      }
+    }
+  }
+  
+
+  
+  @keyframes carouselAnim {
+    from {
+      transform: translate(0, 0);
+    }
+    to {
+      transform: translate(calc(-100% + (5 * 300px)));
+    }
+  }
+  
+  .container .faders {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+  }
+  
+  .faders .right,
+  .faders .left {
+    background: linear-gradient(
+      to right,
+      rgb(221, 156, 102) 0%,
+      rgba(168, 119, 55, 0.521) 100%
+    );
+    width: 7%;
+    height: 100%;
+    position: absolute;
+    z-index: 200;
+  }
+  
+  .right {
+    right: 0;
+    background: linear-gradient(
+      to left,
+      rgba(245, 245, 245, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+  
+
+
+
+/* -----------------------------------------CONTACT-------------------------------------------- */
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: -200px;
+    margin-bottom: -20px;
+  }
+  
+  .contact_question,
+  .contact_answer {
+    text-align: center; /* Center align for smaller screens */
+  }
+
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+
+  .contact_answer{
+
+    margin-right: -19px; /* Space between the question and the left border */
+    background-color: #580d17;
+    height: 300px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 80px;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Add vertical offset for sliding effect */
+  }
+
+  .contact_answer.animated{
+    opacity: 1;
+    transform: translateY(0);
+    /* Optionally customize further animation styles here */
+    animation: slideInRight 3s ease-out; /* Adjust animation duration and easing as needed */
+  }
+
+  @keyframes rotateAnimation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(5deg);
+    }
+  }
+
+      .contact_answer img {
+        margin-right: 20px; /* Adjust as needed */
+        margin-left: 30px;
+        margin-top: 20px;
+        animation: rotateAnimation .5s linear infinite; /* Adjust the animation duration and timing function as needed */
+
+    }
+
+  .contact_answer h1 {
+    margin: 0 10px 0 0; /* Adjust spacing between the image and text */
+    color: white;
+
+  }
+
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .contact_question {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 80px;
+    text-align: left;
+    margin-left: -19px; /* Space between the question and the left border */
+    background-color: rgb(221, 206, 203);
+    height: 300px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Add vertical offset for sliding effect */
+  }
+  
+  .contact_question.animated {
+    opacity: 1;
+    transform: translateY(0);
+    /* Optionally customize further animation styles here */
+    animation: slideIn 3s ease-out; /* Adjust animation duration and easing as needed */
+  }
+
+
+
+
+  
+  @media (min-width: 768px) {
+    #contact {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .contact_question,
+    .contact_answer {
+      flex: 1;
+      text-align: left; /* Left align for larger screens */
+    }
+  
+    .contact_question {
+      order: 1; /* Display question first on larger screens */
+    }
+  
+    .contact_answer {
+      order: 2; /* Display answer second on larger screens */
+      text-align: right;
+    }
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------------------FOOTER-------------------------------------------- */
+footer {
+    background: linear-gradient(135deg, #4c0000, #660000, #4c0000); /*Mahogany Wood*/
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 0;
+    
+}
+
+
+
+
+
+
+
+/* Media query for tablets */
+@media (max-width: 1440px) {
+    .my-header {
+        padding: 15px; /* Adjust padding for tablets */
+    }
+
+    .logo_image {
+        max-width: 150px; /* Adjust logo size for tablets */
+    }
+
+    .nav-link {
+        font-size: 30px; /* Adjust font size for tablets */
+        padding: 8px 16px; /* Adjust padding for tablets */
+        margin-left: 20px;
+    }
+
+    canvas {
+        position: absolute;
+        top: 77px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 50px; 
+        transform: rotate(180deg);
+        z-index: 4;
+      }
+      
+      .nav-link img{
+        width: 40px !important; 
+        height: 40px !important; 
+        opacity: 1; 
+        transition: opacity 0.4s ease-in-out 0s; 
+        display: block; 
+        position: absolute; 
+        top: 8px !important; 
+        left: 50%; 
+        transform: translate(-50%, -50%);
+      }
+}
+
+/* Media query for smaller screens (phone) */
+@media (max-width: 700px) {
+    .my-header {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .logo_image {
+        max-width: 80px; /* Adjust logo size for smaller screens */
+    }
+
+    .nav-link {
+        font-size: 16px; /* Adjust font size for smaller screens */
+        padding: 3px 6px; /* Adjust padding for smaller screens */
+    }
+
+    canvas {
+        position: absolute;
+        top: 47px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 50px; 
+        transform: rotate(180deg);
+        z-index: 4;
+      }
+
+      header {
+
+        padding: 5px 5px;
+        height: 70px;
+
+    }
+
+    .nav-link img{
+        width: 25px !important; 
+        height: 25px !important; 
+        opacity: 1; 
+        transition: opacity 0.4s ease-in-out 0s; 
+        display: block; 
+        position: absolute; 
+        top: -8px !important; 
+        left: 50%; 
+        transform: translate(-50%, -50%);
+      }
+
+      #sliderimage {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin-top: 150px;
+        width: 100%;
+        opacity: 1;
+        transition: opacity 1s ease; /* Smooth fade effect */
+      }
+
+      .phrase {
+        position: absolute;
+        top: 27%; /* Position the phrase in the middle vertically */
+        font-size: 8px; /* Larger font size */
+      }
+    
+      .phrase h1 {
+        white-space: nowrap;
+    }
+    
+    .phrase2 {
+        position: absolute;
+        top: 31%; /* Position the phrase in the middle vertically */
+        color: rgba(127, 23, 37, 1);  /* Semi-transparent white color */
+        font-size: 8px; /* Larger font size */
+    
+      }
+    
+      .phrase2 h1 {
+        white-space: nowrap;
+    }
+    
+    .phrase3 {
+        position: absolute;
+        top: 33%; /* Position the phrase in the middle vertically */
+        color: rgba(127, 23, 37, 1);  /* Semi-transparent white color */
+        font-size: 8px; /* Larger font size */
+        text-align: center;
+      }
+    
+      .phrase3 h1 {
+        white-space: nowrap;
+    }
+}
