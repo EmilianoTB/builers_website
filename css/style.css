@@ -344,8 +344,8 @@ header img {
     font-style: normal;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 4s, transform 4s;
-    animation: fadeInUp 4s ease-in-out forwards;
+    transition: opacity 10s, transform 10s;
+    animation: fadeInUp 10s ease-in-out forwards;
     color: rgb(255, 255, 255);
 }
 
