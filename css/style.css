@@ -12,17 +12,48 @@ body {
     padding: 0;
     position: relative; /* Required for absolute positioning */
     background-color: rgb(127, 23, 37); ;
+
 }
 
 
+
+/*-----------------------------HEADER----------------------------------*/
+
+header {
+  background-color: rgba(127, 23, 37, 0.8); /* Semi-transparent black */
+  color: white;
+  padding: 20px 20px;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* Required for absolute positioning */
+  z-index: 1; /* Above other content */
+  animation: slideInFromLeft 3s ease forwards; /* Apply animation on page load */
+}
+
+canvas {
+  position: absolute;
+  top: 87px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 50px; 
+  transform: rotate(180deg);
+  z-index: 4;
+}
+
+header img {
+  width: 100px;
+}
+
 .image-scroll {
     width: 100%;
-    height: 400px; /* Adjust the height as needed */
+    height: 400px; 
     overflow: hidden; /* This is to ensure the image doesn't overflow */
     position: relative;
     background-color: red;
 }
-
 
 .slider {
   width: 100%;
@@ -172,37 +203,6 @@ body {
 }
 }
 
-header {
-    background-color: rgba(127, 23, 37, 0.8); /* Semi-transparent black */
-    color: white;
-    padding: 20px 20px;
-    height: 90px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative; /* Required for absolute positioning */
-    z-index: 1; /* Above other content */
-    animation: slideInFromLeft 3s ease forwards; /* Apply animation on page load */
-}
-
-
-canvas {
-    position: absolute;
-    top: 87px;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 50px; 
-    transform: rotate(180deg);
-    z-index: 4;
-  }
-  
-
-
-
-header img {
-    width: 100px;
-}
 
 
 @keyframes slideIn {
@@ -298,8 +298,26 @@ header img {
 }
 
 .about_img {
-    margin-right: 400px; /* Add space between image and text */
-    margin-top: 100px;
+  margin-right: 400px; /* Add space between image and text */
+  margin-top: 100px;
+  position: relative;
+}
+
+#personal-image {
+  width: 450px !important;
+  height: 700px !important;
+  animation: leftToRight 3s forwards; /* Apply the slideIn animation */
+}
+
+@keyframes leftToRight {
+  0% {
+      transform: translateX(100%); /* Start off-screen to the left */
+      opacity: 0; /* Start invisible */
+  }
+  100% {
+      transform: translateX(100); /* Move to the center of the screen */
+      opacity: 1; /* Fade in */
+  }
 }
 
 .text {
@@ -392,6 +410,10 @@ header img {
     opacity: 0; /* Initial opacity */
     transform: translateY(-50px); /* Initial position */
     transition: opacity 4s, transform 4s; /* Smooth transition */
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
 }
 
 .section_project.animate h1 {
@@ -669,15 +691,17 @@ header img {
 
 /* -----------------------------------------FOOTER-------------------------------------------- */
 footer {
-    background: linear-gradient(135deg, #4c0000, #660000, #4c0000); /*Mahogany Wood*/
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    bottom: 0;
-    
+  background: linear-gradient(135deg, #4c0000, #660000, #4c0000); /* Mahogany Wood */
+  color: white;
+  padding: 10px 5vw; /* Use viewport width for responsive padding */
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: space-around; /* Evenly distribute items */
+  align-items: center;
+  width: 100%; /* Full width */
+  bottom: 0;
 }
+
 
 
 
@@ -727,6 +751,9 @@ footer {
 
 /* Media query for smaller screens (phone) */
 @media (max-width: 700px) {
+
+  /*--------------------------------HEADER RESPONSIVE-------------------------------------------*/
+
     .my-header {
         padding: 10px; /* Adjust padding for smaller screens */
     }
@@ -813,4 +840,117 @@ footer {
       .phrase3 h1 {
         white-space: nowrap;
     }
-}
+
+      /*--------------------------------HEADER RESPONSIVE END-------------------------------------------*/
+
+
+      /*--------------------------------ABOUT RESPONSIVE START-------------------------------------------*/
+
+
+        #about {
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
+            margin-top: -640px;
+        }
+
+    
+        .text {
+            text-align: center; /* Center text */
+            margin: 20px; /* Adjust margin */
+        }
+    
+        .text h1 {
+            font-size: 50px; /* Adjust font size */
+            margin-left: 0; /* Remove negative margin */
+            margin-top: 0; /* Remove negative margin */
+
+            white-space: normal; /* Allow text to wrap */
+        }
+    
+        .typing-animation.animated {
+            animation: typing 5s; /* Shorten duration for smaller screens */
+        }
+    
+        .text h2 {
+            opacity: 1; /* Show immediately without animation */
+            transform: translateY(0); /* Reset transform */
+            transition: opacity 1s, transform 1s; /* Shorten transition duration */
+        }
+    
+        .text p {
+            font-size: 18px; /* Adjust font size */
+            transition: opacity 1s, transform 1s; /* Shorten transition duration */
+
+        }
+        
+        .about_img{
+
+          margin-right: 0px !important; /* Add space between image and text */
+          margin-top: 0px !important;
+        }
+
+        #personal-image{
+          width: 300px !important;
+          height: 400px !important;
+        }
+
+
+        /*--------------------------------ABOUT RESPONSIVE END-------------------------------------------*/
+
+        /*--------------------------------PROJECT RESPONSIVE START-------------------------------------------*/
+
+        .section_project {
+          margin-top: 50px; /* Adjust top margin for smaller screens */
+          margin-bottom: 150px; /* Adjust bottom margin for smaller screens */
+      }
+  
+      .section_project h1 {
+          font-size: 40px; /* Adjust font size for smaller screens */
+      }
+  
+      .entry {
+          width: 200px; /* Adjust width for smaller screens */
+          height: 300px; /* Adjust height for smaller screens */
+      }
+
+
+      /*--------------------------------PROJECT RESPONSIVE END-------------------------------------------*/
+
+      /*--------------------------------CONTACT RESPONSIVE START-------------------------------------------*/
+      #contact {
+        padding: 10px; /* Adjust padding for smaller screens */
+        margin-top: -100px; /* Adjust top margin for smaller screens */
+        margin-bottom: -10px; /* Adjust bottom margin for smaller screens */
+    }
+
+    .contact_question,
+    .contact_answer {
+        text-align: center; /* Center align for smaller screens */
+        margin-left: 0; /* Remove left margin */
+        margin-right: 0; /* Remove right margin */
+    }
+
+    .contact_question,
+    .contact_answer {
+        font-size: 40px; /* Adjust font size for smaller screens */
+        height: 200px; /* Adjust height for smaller screens */
+        width: 100%; /* Make the elements span the full width */
+
+    }
+
+    .contact_answer img {
+        margin-right: 10px; /* Adjust margin for smaller screens */
+        margin-left: 10px; /* Adjust margin for smaller screens */
+        margin-top: 10px; /* Adjust margin for smaller screens */
+    }
+
+    .contact_answer h1 {
+        margin: 0; /* Remove margin */
+    }
+
+      /*--------------------------------CONTACT RESPONSIVE END-------------------------------------------*/
+   }
+
+
+        
+
