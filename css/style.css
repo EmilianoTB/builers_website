@@ -702,6 +702,199 @@ footer {
   bottom: 0;
 }
 
+ /*--------------------------------FORM RESPONSIVE-------------------------------------------*/
+ .container_form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.form-wrapper {
+  width: 90%;
+  max-width: 600px; /* Set a maximum width for the form */
+  padding: 30px;
+  font-size: 20px;
+  margin-bottom: 70px; /* Add margin to create space between form and image */
+}
+
+/*h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 45px;
+  color: white;
+  margin-top: -100px;
+  text-align: left;
+  padding-bottom: 100px;
+} */
+
+.animated-title {
+  position: relative;
+  perspective: 400px;
+  padding-left: 17px;
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 52px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.animated-title:before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 6px;
+  background: lightcoral; /* Changed to a similar color */
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateX(-150px);
+  animation: title-border-slide-in 4s ease-out forwards;
+}
+
+.animated-title .title-word {
+  opacity: 0;
+  transform-origin: bottom center;
+  transform: rotateX(-90deg);
+}
+
+.animated-title .title-word:nth-child(1) {
+  animation: roll-in 0.5s 0s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+}
+
+.animated-title .title-word:nth-child(2) {
+  animation: roll-in 0.5s 0.3s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+}
+
+.animated-title .title-word:nth-child(3) {
+  animation: roll-in 0.5s 0.6s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+}
+
+.animated-title .title-word:nth-child(4) {
+  animation: roll-in 0.5s 0.9s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+}
+
+.animated-title .title-word:nth-child(5) {
+  animation: roll-in 0.5s 1.2s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+}
+
+.animated-title .title-word:nth-child(6) {
+  animation: roll-in 0.5s 1.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+}
+
+.animated-title .title-word:nth-child(7) {
+  animation: roll-in 0.5s 1.8s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+}
+
+.animated-title .title-word:nth-child(8) {
+  animation: roll-in 0.5s 2.1s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+}
+
+.animated-title .title-word:nth-child(9) {
+  animation: roll-in 0.5s 2.4s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+}
+
+.animated-title .title-word:nth-child(10) {
+  animation: roll-in 0.5s 2.7s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+}
+
+.animated-title .title-word:nth-child(11) {
+  animation: roll-in 0.5s 3.0s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+}
+
+.animated-title .title-word:nth-child(12) {
+  animation: roll-in 0.5s 3.3s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+}
+
+@keyframes title-border-slide-in {
+  0% {
+      transform: translateX(-150px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes roll-in {
+  0% {
+      transform: rotateX(-90deg);
+      opacity: 1;
+  }
+  100% {
+      transform: rotateX(0deg);
+      opacity: 1;
+  }
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Remove borders except bottom */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: #7F1725;
+  border: 1px solid white; /* Sets the border to be transparent */
+  border-top: none; /* Removes the top border */
+  border-left: none; /* Removes the left border */
+  border-right: none; /* Removes the right border */
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  /* Remove default outline on focus */
+  outline: none;
+  color: white;
+  font-size: 20px;
+}
+
+
+
+form label{
+  color: white;
+}
+
+textarea {
+  height: 120px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #630000;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 20px;
+}
+
+button:hover {
+  background-color: #fff;
+  color: black;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.form_img{
+  width: 40%;
+  height: 600px;
+  background-image: url('../images/depositphotos_3696181-stock-photo-closeup-of-architectural-project.jpg');
+  background-size: cover;
+  background-position: center;
+  margin-right: 10px;
+  margin-top: 50px;
+}
 
 
 
@@ -954,6 +1147,20 @@ footer {
       .footer-logo{
         width: 150px;
         height: 150px;
+      }
+
+      /*--------------------------------FORM-------------------------------------------*/
+
+      .form-wrapper{
+        margin-top: -100px;
+      }
+
+
+      .form_img{
+        width: 300px;
+        height: 600px;
+        margin-bottom: 100px;
+        margin-top: 10px;
       }
    }
 
