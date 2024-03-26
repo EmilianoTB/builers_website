@@ -1,4 +1,4 @@
-var images = ["images/img_1.jpg","images/img_2.JPG", "images/img_3.JPG", "images/img_4.JPG"];
+var images = ["images/img_1.jpg","images/img_house2.jpeg", "images/img_3.JPG", "images/img_house.jpeg"];
 var i = 0;
 var sliderImage = document.getElementById("sliderimage");
 var personalImage = document.getElementById("personal_image")
@@ -21,7 +21,7 @@ function slideImage() {
             sliderImage.src = images[i]; // Change the image source
             sliderImage.style.opacity = 1; // Fade in the new image
             i = (i + 1) % images.length; // Move to the next image
-            setTimeout(slideImage, 9000); // Set a 4-second delay for the rest of the images
+            setTimeout(slideImage, 3000); // Set a 4-second delay for the rest of the images
         }, 10); // Adjust the delay to match the transition duration
     }
 }
