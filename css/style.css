@@ -852,9 +852,34 @@ footer {
   flex-wrap: wrap; /* Allow items to wrap to the next line */
   justify-content: space-around; /* Evenly distribute items */
   align-items: center;
-  width: 100%; /* Full width */
+  width: 90%; /* Full width */
   bottom: 0;
+  font-family: "Merriweather", serif;
+  font-weight: 300;
+  font-style: normal;
 }
+
+footer a{
+    text-decoration: none;
+    color: white; /* Default color */
+}
+
+a:hover,
+a:active {
+  color: rgb(171, 173, 27); /* Change color on hover or touch */
+}
+
+.footer-logo {
+  width: 200px;
+  margin-top: 30px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
  /*--------------------------------FORM RESPONSIVE-------------------------------------------*/
  .container_form {
@@ -1101,6 +1126,8 @@ button:active {
 /* Media query for smaller screens (phone) */
 @media (max-width: 700px) {
 
+ 
+
   /*--------------------------------HEADER RESPONSIVE-------------------------------------------*/
 
     .my-header {
@@ -1309,6 +1336,19 @@ button:active {
       .form-wrapper{
         margin-top: -100px;
       }
+
+      .form-wrapper {
+
+        margin-left: 5px; /* Add margin to the left */
+      }
+
+      .container_form {
+
+        display: flex;
+        flex-direction: column; /* Change flex direction to row */
+
+      }
+      
 
 
       .form_img{
