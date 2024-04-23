@@ -57,7 +57,7 @@ header img {
 
 .slider {
   width: 100%;
-  height: 1200px;
+  height: 1160px;
   overflow: hidden;
   position: relative;
   margin-top: -150px;
@@ -76,23 +76,28 @@ header img {
     position: absolute;
     top: 75%; /* Position the phrase in the middle vertically */
     left: -100%; /* Start the phrase off-screen to the left */
-    color: rgba(127, 23, 37, 0.8);  /* Semi-transparent white color */
+    color: rgba(255, 255, 255, 0.857);  /* Semi-transparent white color */
     font-size: 40px; /* Larger font size */
     text-align: center;
     width: 100%; /* Make the phrase span the entire width */
     z-index: 2; /* Ensure the phrase is above the image */
     animation: movePhrase 8s linear infinite, textDisappear 8s linear infinite; /* Move the phrase from left to right */
+    
   }
+
+
 
   .phrase h1 {
     white-space: nowrap;
+    
+    
 }
 
 .phrase2 {
     position: absolute;
     top: 83%; /* Position the phrase in the middle vertically */
     left: -100%; /* Start the phrase off-screen to the left */
-    color: rgba(127, 23, 37, 1);  /* Semi-transparent white color */
+    color: rgba(255, 255, 255, 0.857);  /* Semi-transparent white color */
     font-size: 40px; /* Larger font size */
     text-align: center;
     width: 100%; /* Make the phrase span the entire width */
@@ -103,13 +108,15 @@ header img {
 
   .phrase2 h1 {
     white-space: nowrap;
+    
+    
 }
 
 .phrase3 {
     position: absolute;
     top: 89%; /* Position the phrase in the middle vertically */
     left: -100%; /* Start the phrase off-screen to the left */
-    color: rgba(127, 23, 37, 1);  /* Semi-transparent white color */
+    color: rgba(255, 255, 255, 0.857);  /* Semi-transparent white color */
     font-size: 40px; /* Larger font size */
     text-align: center;
     width: 100%; /* Make the phrase span the entire width */
@@ -120,6 +127,9 @@ header img {
 
   .phrase3 h1 {
     white-space: nowrap;
+    
+    
+    
 }
 
 @keyframes textDisappear {
@@ -828,7 +838,7 @@ header img {
   .text_specialize h1 {
     font-size: 60px;
     margin-right: 50px;
-    margin-top: -100px;
+    margin-top: -80px;
   }
 
   .text_specialize{
@@ -1183,7 +1193,7 @@ button:active {
 
       .phrase {
         position: absolute;
-        top: 29%; /* Position the phrase in the middle vertically */
+        top: 31%; /* Position the phrase in the middle vertically */
         font-size: 8px; /* Larger font size */
       }
     
@@ -1193,8 +1203,8 @@ button:active {
     
     .phrase2 {
         position: absolute;
-        top: 31%; /* Position the phrase in the middle vertically */
-        color: rgba(127, 23, 37, 1);  /* Semi-transparent white color */
+        top: 34%; /* Position the phrase in the middle vertically */
+        color: rgba(255, 255, 255, 0.857);  /* Semi-transparent white color */
         font-size: 8px; /* Larger font size */
     
       }
@@ -1205,8 +1215,8 @@ button:active {
     
     .phrase3 {
         position: absolute;
-        top: 33%; /* Position the phrase in the middle vertically */
-        color: rgba(127, 23, 37, 1);  /* Semi-transparent white color */
+        top: 36%; /* Position the phrase in the middle vertically */
+    color: rgba(255, 255, 255, 0.857);  /* Semi-transparent white color */
         font-size: 8px; /* Larger font size */
         text-align: center;
       }
@@ -1338,15 +1348,12 @@ button:active {
       }
 
       .form-wrapper {
-
         margin-left: 5px; /* Add margin to the left */
       }
 
       .container_form {
-
         display: flex;
         flex-direction: column; /* Change flex direction to row */
-
       }
       
 
